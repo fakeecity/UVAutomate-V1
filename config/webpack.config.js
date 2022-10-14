@@ -1,6 +1,7 @@
 'use strict';
 
 const { merge } = require('webpack-merge');
+const webpack = require('webpack');
 
 const common = require('./webpack.common.js');
 const PATHS = require('./paths');
@@ -15,8 +16,19 @@ const config = (env, argv) =>
     },
     devtool: argv.mode === 'production' ? false : 'source-map',
     resolve: {
-      fallback: { "crypto": require.resolve("crypto-js") }
-    }
+      fallback: { 
+        "crypto": require.resolve("crypto-js"),
+        "buffer": require.resolve("buffer") 
+      }
+    },
+    plugins: [
+      new webpack.ProvidePlugin({
+          Buffer: ['buffer', 'Buffer'],
+      }),
+      new webpack.ProvidePlugin({
+          process: 'process/browser',
+      }),
+  ],
   });
 
 module.exports = config;

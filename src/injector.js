@@ -3,7 +3,7 @@
 import { BrowserQRCodeReader } from '@zxing/browser';
 import { hotp } from 'otplib';
 import crypto from 'crypto-js'
-authenticator.options = { crypto };
+hotp.options = { crypto };
 
 document.addEventListener('DOMContentLoaded', run());
 
@@ -106,7 +106,7 @@ function installDuo() {
 async function activateDuo() {
   if (document.querySelector('img[class="qr"]')) {
     const codeReader = new BrowserQRCodeReader();
-    const resultImage = await codeReader.decodeFromImageElement(document.querySelector('img[class="qr"]'));
+    const resultImage = String(await codeReader.decodeFromImageElement(document.querySelector('img[class="qr"]')));
     let duoResponse;
     try {
       const uri = resultImage.split('-', 2);
