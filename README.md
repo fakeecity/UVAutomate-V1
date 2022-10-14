@@ -1,10 +1,10 @@
-# <img src="/uvautomate-extension/public/icons/uva128.png" width="40" align="left"> UVAutomate V1
+# <img src="/public/icons/uva128.png" width="40" align="left"> UVAutomate V1
 
 Fully Standalone Client Extension for the Automation of UVA's Netbadge
 
 > # Components
 >
-> **[Extension](https://github.com/Alpha-Iota-Omega/UVAutomate/tree/main/uvautomate-extension)** _(50%)_
+> **[Extension](https://github.com/fakeecity/UVAutomate-V1)** _(70%)_
 >
 > - Responsible for onboarding users, full login flow, and 2fa HOTP generation
 > - Never makes any external API calls, all secrets are stored locally and encrypted
