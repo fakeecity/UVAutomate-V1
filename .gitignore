@@ -128,3 +128,5 @@ dist
 
 .wakatime-project
 .DS_Store
+
+build/

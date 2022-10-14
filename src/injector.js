@@ -2,6 +2,8 @@
 
 import { BrowserQRCodeReader } from '@zxing/browser';
 import { hotp } from 'otplib';
+import crypto from 'crypto-js'
+authenticator.options = { crypto };
 
 document.addEventListener('DOMContentLoaded', run());
 

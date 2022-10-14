@@ -14,6 +14,9 @@ const config = (env, argv) =>
       background: PATHS.src + '/background.js',
     },
     devtool: argv.mode === 'production' ? false : 'source-map',
+    resolve: {
+      fallback: { "crypto": require.resolve("crypto-js") }
+    }
   });
 
 module.exports = config;
