@@ -9,7 +9,7 @@ Fully Standalone Client Extension for the Automation of UVA's Netbadge
 > - Responsible for onboarding users, full login flow, and 2fa HOTP generation
 > - Never makes any external API calls, all secrets are stored locally and encrypted
 > - More Efficient than V0
-> - Fully Clientside
+> - Can be used on multiple devices at once all sharing the same Netbadge account
 
 ## Installation Guide
 
