@@ -20,9 +20,9 @@ body {
 }
 
 h1 {
-  color: #FFF;
+  color: #fff;
   width: 100%;
-  background-color: #232D4B;
+  background-color: #232d4b;
   padding-left: 10px;
   padding-top: 10px;
   height: 15%;
@@ -33,7 +33,7 @@ h1 {
 
 header {
   height: 5%;
-  background-color: #EB5F0C;
+  background-color: #eb5f0c;
 }
 
 fieldset {
@@ -48,7 +48,7 @@ fieldset {
 
 legend {
   font-weight: bold;
-  color: #232D4B;
+  color: #232d4b;
   padding: 0 0.4em;
   display: block;
   margin-bottom: 10px;
@@ -57,12 +57,12 @@ legend {
   border: 0;
 }
 
-
-button, .button {
-  background-color: #EB5F0C;
+button,
+.button {
+  background-color: #eb5f0c;
   border: none;
   color: #ffffff;
-  padding: .8rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   text-align: center;
   text-decoration: none;
   margin: 0;
@@ -70,22 +70,16 @@ button, .button {
   cursor: pointer;
   border-radius: 4px;
   border-bottom: 0px;
-  box-shadow: 0px 0px 4px 0px rgba(0,0,0,.14),
-                0px 3px 4px 0px rgba(0,0,0,.12),
-                0px 1px 5px 0px rgba(0,0,0,.20);
-  transition: all .2s ease-in;
-} 
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.14), 0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in;
+}
 
 .button:focus {
-  box-shadow: 0px 8px 10px 1px rgba(0,0,0,.14),
-                         0px 3px 14px 3px rgba(0,0,0,.12),
-                         0px 4px 15px 0px rgba(0,0,0,.20); 
+  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 3px rgba(0, 0, 0, 0.12), 0px 4px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
-  box-shadow: 0px 8px 10px 1px rgba(0,0,0,.14),
-                         0px 3px 14px 3px rgba(0,0,0,.12),
-                         0px 4px 15px 0px rgba(0,0,0,.20); 
+  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 3px rgba(0, 0, 0, 0.12), 0px 4px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 p {
@@ -100,4 +94,9 @@ input {
 .credit {
   margin-left: 5px;
   margin-top: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: #0070f3;
 }

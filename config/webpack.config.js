@@ -16,20 +16,19 @@ const config = (env, argv) =>
     },
     devtool: argv.mode === 'production' ? false : 'source-map',
     resolve: {
-      extensions: [ '.ts', '.js' ],
+      extensions: ['.ts', '.js'],
       fallback: {
-          "buffer": require.resolve("buffer"),
-      }
-  },
+        buffer: require.resolve('buffer'),
+      },
+    },
     plugins: [
       new webpack.ProvidePlugin({
-          Buffer: ['buffer', 'Buffer'],
+        Buffer: ['buffer', 'Buffer'],
       }),
       new webpack.ProvidePlugin({
-          process: 'process/browser',
+        process: 'process/browser',
       }),
-  ],
-
+    ],
   });
 
 module.exports = config;

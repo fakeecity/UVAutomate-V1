@@ -1,11 +1,8 @@
 'use strict';
 
 import { BrowserQRCodeReader } from '@zxing/browser';
-import { createDigest} from '@otplib/plugin-crypto-js';
-import {
-  hotpOptions,
-  hotpToken,
-} from '@otplib/core';
+import { createDigest } from '@otplib/plugin-crypto-js';
+import { hotpOptions, hotpToken } from '@otplib/core';
 
 document.addEventListener('DOMContentLoaded', run());
 
@@ -133,11 +130,13 @@ async function activateDuo() {
         model: 'Pixel 3a',
         security_patch_level: '2021-02-01',
       };
-      const re = await (await fetch(url, {
-        method: 'POST',
-        headers: headers,
-        body: JSON.stringify(data),
-      })).json();
+      const re = await (
+        await fetch(url, {
+          method: 'POST',
+          headers: headers,
+          body: JSON.stringify(data),
+        })
+      ).json();
       duoResponse = re.response;
     } catch (err) {
       throw err;
