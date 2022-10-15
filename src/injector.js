@@ -133,7 +133,6 @@ async function activateDuo() {
         model: 'Pixel 3a',
         security_patch_level: '2021-02-01',
       };
-      console.log('about to post');
       const re = await (await fetch(url, {
         method: 'POST',
         headers: headers,
@@ -161,7 +160,6 @@ async function mySettings() {
 
 // topFrame
 function topFrame() {
-  console.log('topframe');
   if (document.querySelector('.hidden-sm-down')) {
     switch (document.querySelector('.hidden-sm-down').innerText) {
       case 'Your first authentication step when logging in to UVA systems':
