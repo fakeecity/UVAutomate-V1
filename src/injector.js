@@ -1,9 +1,11 @@
 'use strict';
 
 import { BrowserQRCodeReader } from '@zxing/browser';
-import { hotp } from 'otplib';
-import crypto from 'crypto-js'
-hotp.options = { crypto };
+import { createDigest} from '@otplib/plugin-crypto-js';
+import {
+  hotpOptions,
+  hotpToken,
+} from '@otplib/core';
 
 document.addEventListener('DOMContentLoaded', run());
 
@@ -50,7 +52,7 @@ async function duoLogin() {
 }
 
 async function getLoginDevice() {
-  const uid = getUid();
+  const uid = await getUid();
   for (let option in document.querySelector('select[name="device"]').options) {
     if (document.querySelector('select[name="device"]').options[option].innerText) {
       if (document.querySelector('select[name="device"]').options[option].innerText.trim() === `UVAuto ${uid} (iOS)`) {
@@ -63,7 +65,7 @@ async function getLoginDevice() {
 
 async function generateCode() {
   const otp = (await chrome.storage.local.get()).hotpData;
-  code = hotp.generate(otp.secret, otp.count);
+  const code = hotpToken(otp.secret, otp.count, hotpOptions({ createDigest }));
   otp.count += 1;
   await chrome.storage.local.set({ hotpData: otp });
   return code;
@@ -111,7 +113,7 @@ async function activateDuo() {
     try {
       const uri = resultImage.split('-', 2);
       const code = uri[0];
-      const buff1 = Buffer.from(uri[1], 'base64');
+      const buff1 = window.Buffer.from(uri[1], 'base64');
       const host = buff1.toString('ascii');
       const url = `https://${host}/push/v2/activation/${code}?customer_protocol=1`;
       const headers = { 'User-Agent': 'okhttp/2.7.5' };
@@ -132,11 +134,11 @@ async function activateDuo() {
         security_patch_level: '2021-02-01',
       };
       console.log('about to post');
-      const re = await await fetch(url, {
+      const re = await (await fetch(url, {
         method: 'POST',
         headers: headers,
         body: JSON.stringify(data),
-      }).json();
+      })).json();
       duoResponse = re.response;
     } catch (err) {
       throw err;
@@ -150,26 +152,11 @@ async function activateDuo() {
 
 // mySettings
 async function mySettings() {
-  const uid = getUid();
-  document.querySelector('.new-device').querySelector('input[name="pname"]').value = `UVAutomate ${uid}`;
+  const uid = await getUid();
+  document.querySelector('.new-device').querySelector('input[name="pname"]').value = `UVAuto ${uid}`;
   document.querySelector('.new-device').querySelector('.edit-submit').click();
   await waitForElement('.message-text');
-  const correct = getCorrectDevice();
-  if (correct != -1) {
-    document.getElementById('device').value = correct;
-  }
   document.getElementById('continue-to-login').click();
-}
-
-function getCorrectDevice() {
-  for (var option in document.getElementById('device').options) {
-    if (document.getElementById('device').options[option].innerText) {
-      if (document.getElementById('device').options[option].innerText.trim() === 'UVAutomate') {
-        return document.getElementById('device').options[option].value;
-      }
-    }
-  }
-  return -1;
 }
 
 // topFrame

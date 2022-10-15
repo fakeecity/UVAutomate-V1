@@ -19,10 +19,10 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@otplib/core": "^12.0.1",
+    "@otplib/plugin-crypto-js": "^12.0.1",
     "@zxing/browser": "^0.1.1",
     "@zxing/library": "^0.19.1",
-    "buffer": "^6.0.3",
-    "crypto-js": "^4.1.1",
-    "otplib": "^12.0.1"
+    "buffer": "^6.0.3"
   }
 }

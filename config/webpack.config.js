@@ -16,11 +16,11 @@ const config = (env, argv) =>
     },
     devtool: argv.mode === 'production' ? false : 'source-map',
     resolve: {
-      fallback: { 
-        "crypto": require.resolve("crypto-js"),
-        "buffer": require.resolve("buffer") 
+      extensions: [ '.ts', '.js' ],
+      fallback: {
+          "buffer": require.resolve("buffer"),
       }
-    },
+  },
     plugins: [
       new webpack.ProvidePlugin({
           Buffer: ['buffer', 'Buffer'],
@@ -29,6 +29,7 @@ const config = (env, argv) =>
           process: 'process/browser',
       }),
   ],
+
   });
 
 module.exports = config;
