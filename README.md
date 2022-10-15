@@ -4,7 +4,7 @@ Fully Standalone Client Extension for the Automation of UVA's Netbadge
 
 > # Components
 >
-> **[Extension](https://github.com/fakeecity/UVAutomate-V1)** _(70%)_
+> **[Extension](https://github.com/fakeecity/UVAutomate-V1)** _(100%)_
 >
 > - Responsible for onboarding users, full login flow, and 2fa HOTP generation
 > - Never makes any external API calls, all secrets are stored locally and encrypted
@@ -13,6 +13,6 @@ Fully Standalone Client Extension for the Automation of UVA's Netbadge
 
 > # TODO
 >
-> - Port Utility of Serverless Functions to Standalone Extension
-> - Increase Efficiency
+> - Improve Efficiency (Modularize Onboarding)
+> - Better Error Handling
 > - Port for Use in Other Duo Applications
