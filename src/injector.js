@@ -41,7 +41,7 @@ async function duoLogin() {
     if (correct != -1) {
       document.querySelector('select[name="device"]').value = correct;
       const code = await generateCode();
-      submitCode(code);
+      await submitCode(code);
     } else {
       duoOnboard();
     }
@@ -68,10 +68,11 @@ async function generateCode() {
   return code;
 }
 
-function submitCode(code) {
+async function submitCode(code) {
   document.getElementById('passcode').click();
   fillField(document.querySelector('input[name="passcode"]'), code);
   document.querySelector('input[name="dampen_choice"]').click();
+  await new Promise(resolve => setTimeout(resolve, 150));
   document.getElementById('passcode').click();
 }
 
