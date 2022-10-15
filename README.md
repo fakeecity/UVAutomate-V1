@@ -35,8 +35,8 @@ yarn build
 
 - Select the 'build' directory within your project folder
 
-> # TODO
->
-> - Improve Efficiency (Modularize Onboarding)
-> - Better Error Handling
-> - Port for Use in Other Duo Applications
+## TODO
+
+- Improve Efficiency (Modularize Onboarding)
+- Better Error Handling
+- Port for Use in Other Duo Applications
