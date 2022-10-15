@@ -13,6 +13,8 @@ Fully Standalone Client Extension for the Automation of UVA's Netbadge
 
 ## Installation Instructions
 
+- Must have Git and Node.js/NPM installed first
+
 - Clone the git repository
 
 ```sh
