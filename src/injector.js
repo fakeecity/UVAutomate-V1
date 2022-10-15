@@ -111,7 +111,7 @@ async function activateDuo() {
     try {
       const uri = resultImage.split('-', 2);
       const code = uri[0];
-      const buff1 = window.Buffer.from(uri[1], 'base64');
+      const buff1 = Buffer.from(uri[1], 'base64');
       const host = buff1.toString('ascii');
       const url = `https://${host}/push/v2/activation/${code}?customer_protocol=1`;
       const headers = { 'User-Agent': 'okhttp/2.7.5' };
