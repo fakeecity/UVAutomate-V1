@@ -11,7 +11,21 @@ Fully Standalone Client Extension for the Automation of UVA's Netbadge
 > - More Efficient than V0
 > - Fully Clientside
 
-## Installation Instructions
+## Installation Guide
+
+- Download the latest [Release](https://github.com/fakeecity/UVAutomate-V1/releases/tag/Release)
+
+- Unzip it
+
+- Navigate to chrome://extensions/ within the browser
+
+- Enable developer mode
+
+- 'Load unpacked'
+
+- Select the unzipped 'build' folder
+
+## Build it yourself (optional)
 
 - Must have Git, Node.js/NPM, and Yarn installed first
 
@@ -29,13 +43,7 @@ npm install
 yarn build
 ```
 
-- Navigate to chrome://extensions/ within the browser
-
-- Enable developer mode
-
-- 'Load unpacked'
-
-- Select the 'build' directory within your project folder
+- Your production build will appear in the project folder
 
 ## TODO
 
