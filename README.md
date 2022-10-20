@@ -2,6 +2,8 @@
 
 Fully Standalone Client Extension for the Automation of UVA's Netbadge
 
+**[Now on the Chrome Web Store!](https://chrome.google.com/webstore/detail/uvautomate/monmleffehffoafjdhlfbaidhcbhcmff)**
+
 > # Components
 >
 > **[Extension](https://github.com/fakeecity/UVAutomate-V1)** _(100%)_
